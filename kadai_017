@@ -1,0 +1,105 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNQAj6b/3Dc3mQIq9en2uT+",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/yutohosono/github-basic-kadai/blob/main/kadai_017\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 12,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EPWwcPPGsNqi",
+        "outputId": "6f4d029c-09e5-4d71-968a-457b5ad1ddec"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "たかしは大人ではありません\n",
+            "さとしは大人です\n",
+            "えりは大人です\n"
+          ]
+        }
+      ],
+      "source": [
+        "class Human:\n",
+        "  def __init__(self):\n",
+        "    self.name = \"\"\n",
+        "    self.age = \"\"\n",
+        "\n",
+        "  def set_Human(self ,name , age):\n",
+        "    self.name = name\n",
+        "    self.age = age\n",
+        "\n",
+        "  def check_adult(self):\n",
+        "    if self.age >= 20:\n",
+        "      print(f\"{self.name}は大人です\")\n",
+        "    else:\n",
+        "      print(f\"{self.name}は大人ではありません\")\n",
+        "\n",
+        "human = Human()\n",
+        "members = {\"たかし\" : 19 , \"さとし\" : 20 ,\"えり\" : 21}\n",
+        "for key , value in members.items():\n",
+        "  human.set_Human( key, value)\n",
+        "  human.check_adult()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "c19f8649"
+      },
+      "source": [
+        "class Human:\n",
+        "  def __init__(self, name, age):\n",
+        "    self.name = name\n",
+        "    self.age = age\n",
+        "\n",
+        "  def check_adult(self):\n",
+        "    if self.age >= 20:\n",
+        "      print(f\"{self.name}は大人です\")\n",
+        "    else:\n",
+        "      print(f\"{self.name}は大人ではありません\")\n",
+        "\n",
+        "members_data = {\"たかし\" : 19 , \"さとし\" : 20 ,\"えり\" : 21}\n",
+        "human_list = []\n",
+        "\n",
+        "for name, age in members_data.items():\n",
+        "  human = Human(name, age) # 各メンバーごとに新しいHumanオブジェクトを作成\n",
+        "  human_list.append(human)\n",
+        "\n",
+        "# リスト内の各Humanオブジェクトに対して処理を実行\n",
+        "for human in human_list:\n",
+        "  human.check_adult()"
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
